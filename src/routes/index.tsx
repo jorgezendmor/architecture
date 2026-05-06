@@ -40,7 +40,7 @@ function Index() {
       <section className="mx-auto max-w-[1500px] px-6 py-24">
         <div className="mb-16 flex items-end justify-between">
           <span className="text-[11px] uppercase tracking-[0.3em] text-foreground/60">Table of Contents</span>
-          <span className="text-[11px] uppercase tracking-[0.3em] text-foreground/60">Spread 03</span>
+          <span className="text-[11px] uppercase tracking-[0.3em] text-foreground/60">​</span>
         </div>
 
         <div className="grid grid-cols-2 gap-x-6 gap-y-16 md:grid-cols-4">
