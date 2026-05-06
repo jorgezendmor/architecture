@@ -10,53 +10,74 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
 });
 
+function Row({ children }: { children: React.ReactNode }) {
+  return <div className="min-h-[180px]">{children}</div>;
+}
+
 function AboutPage() {
   return (
-    <main className="mx-auto max-w-[1400px] px-6 py-16">
-      <div className="grid gap-10 border-b border-foreground pb-10 md:grid-cols-[160px_1fr]">
-        <div className="text-[11px] uppercase tracking-[0.25em] text-accent-blue">About</div>
-        <h1 className="text-3xl leading-tight md:text-5xl">More About Me</h1>
-      </div>
-
-      <section className="bg-sky mt-12">
-        <div className="grid gap-10 p-8 md:grid-cols-3 md:p-12">
-          <div>
+    <main>
+      <div className="grid md:grid-cols-2">
+        {/* LEFT — sky */}
+        <section className="bg-sky px-10 py-16 md:px-20 md:py-24">
+          <Row>
             <h2 className="text-accent-blue text-sm">Jorge</h2>
-            <h2 className="mt-8 text-accent-blue text-sm">About Me</h2>
-            <p className="mt-4 text-[13px] leading-7">
+          </Row>
+
+          <Row>
+            <h2 className="text-accent-blue text-sm">About Me</h2>
+            <p className="mt-4 max-w-md text-[13px] leading-7">
               Motivated designer who approaches architecture as both a technical
               discipline and a cultural practice that shapes how people experience space.
             </p>
+          </Row>
 
-            <h2 className="mt-10 text-accent-blue text-sm">Contacts</h2>
+          <Row>
+            <h2 className="text-accent-blue text-sm">Contacts</h2>
             <p className="mt-4 text-[13px] leading-7">
-              jorgezendmor@gmail.com<br />(915)-270-7582
+              jorgezendmor@gmail.com
+              <br />
+              (915)-270-7582
             </p>
+          </Row>
 
-            <h2 className="mt-10 text-accent-blue text-sm">Skills</h2>
-            <ul className="mt-4 space-y-2 text-[13px]">
+          <div>
+            <h2 className="text-accent-blue text-sm">Skills</h2>
+            <ul className="mt-4 space-y-3 text-[13px]">
               <li>Adobe Photoshop</li>
               <li>Adobe Illustrator</li>
               <li>Rhinoceros</li>
             </ul>
           </div>
+        </section>
 
-          <div className="md:col-span-2 bg-ink p-8 md:p-12">
+        {/* RIGHT — ink */}
+        <section className="bg-ink px-10 py-16 md:px-20 md:py-24">
+          <Row>
             <h2 className="text-accent-blue text-sm">Zendejas Moran</h2>
-            <h2 className="mt-8 text-accent-blue text-sm">Experience</h2>
+          </Row>
+
+          <Row>
+            <h2 className="text-accent-blue text-sm">Experience</h2>
             <p className="mt-4 text-[13px] leading-7">
-              Bloom Homes · Architecture Intern<br />
-              El Paso, Texas<br />
+              Bloom Homes · Architecture Intern
+              <br />
+              El Paso, Texas
+              <br />
               May 2025 — August 2025
             </p>
+          </Row>
 
-            <h2 className="mt-10 text-accent-blue text-sm">Education</h2>
-            <p className="mt-4 text-[13px] leading-7">
-              Second year student at the Huckabee College of Architecture,
+          <Row>
+            <h2 className="text-accent-blue text-sm">Education</h2>
+            <p className="mt-4 max-w-sm text-[13px] leading-7">
+              Second year student at the Huckabee College of Architecture at
               Texas Tech University.
             </p>
+          </Row>
 
-            <div className="mt-12 grid grid-cols-10 gap-2">
+          <div>
+            <div className="grid grid-cols-10 gap-2">
               {Array.from({ length: 30 }).map((_, i) => (
                 <span
                   key={i}
@@ -69,8 +90,8 @@ function AboutPage() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
   );
 }
