@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProjectPage } from "@/components/ProjectPage";
 import p13 from "@/assets/portfolio/page-13.jpg";
-import p14 from "@/assets/portfolio/page-14.jpg";
 
 export const Route = createFileRoute("/drainage")({
   head: () => ({
@@ -22,7 +21,6 @@ export const Route = createFileRoute("/drainage")({
       ]}
       images={[
         { src: p13, caption: "Three Main Collection Lakes — Mackenzie Park, Clapp Park, Dunbar", full: true },
-        { src: p14, caption: "Diagrammatic Site Section", full: true },
       ]}
       prev={{ to: "/retreat", label: "03 · Retreat" }}
     />
