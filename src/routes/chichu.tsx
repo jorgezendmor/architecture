@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ProjectPage } from "@/components/ProjectPage";
 import p04 from "@/assets/portfolio/page-04.jpg";
 import p05 from "@/assets/portfolio/page-05.jpg";
+import p06 from "@/assets/portfolio/page-06.jpg";
 
 export const Route = createFileRoute("/chichu")({
   head: () => ({
@@ -22,6 +23,7 @@ export const Route = createFileRoute("/chichu")({
       images={[
         { src: p04, caption: "Exploded Axonometric · Site & Subterranean Volumes", full: true },
         { src: p05, caption: "First & Second Basement Plans", full: true },
+        { src: p06, caption: "Section Perspective · Walter De Maria Exhibition", full: true },
       ]}
       next={{ to: "/lava", label: "02 · L.A.V.A" }}
     />
