@@ -147,6 +147,7 @@
     font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
     letter-spacing: 0.02em;
     -webkit-font-smoothing: antialiased;
+    text-transform: uppercase;
   }
 
   h1, h2, h3, h4, h5, h6 {
