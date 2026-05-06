@@ -27,18 +27,13 @@ function Index() {
   return (
     <main>
       {/* COVER */}
-      <section className="border-b border-foreground">
-        <div className="mx-auto grid min-h-[80vh] max-w-[1400px] grid-rows-[1fr_auto_1fr] px-6 py-16">
-          <div />
-          <div className="border-y border-foreground py-10">
-            <div className="flex items-baseline justify-between">
-              <h1 className="text-2xl tracking-[0.4em] md:text-4xl">PORTFOLIO</h1>
-              <span className="text-[11px] uppercase tracking-[0.3em] text-foreground/60">2024 — 2025</span>
-            </div>
-          </div>
-          <div className="flex items-end justify-end">
-            <p className="text-right text-base tracking-[0.3em] md:text-2xl">JORGE ZENDEJAS MORAN</p>
-          </div>
+      <section>
+        <div className="mx-auto flex min-h-screen max-w-[1400px] flex-col justify-center px-10 py-24">
+          <h1 className="pl-[12%] text-base tracking-[0.3em] md:text-lg">PORTFOLIO</h1>
+          <div className="mt-4 border-t border-foreground" />
+          <p className="mt-6 pr-[4%] text-right text-base tracking-[0.3em] md:text-lg">
+            JORGE ZENDEJAS MORAN
+          </p>
         </div>
         <div className="overflow-hidden">
           <img src={p01} alt="Portfolio cover" className="block w-full" />
