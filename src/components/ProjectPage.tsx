@@ -21,18 +21,29 @@ export function ProjectPage({ number, title, subtitle, description, images, prev
         </div>
       </div>
 
+      {images[0] && (
+        <figure className="mt-12">
+          <div className="overflow-hidden border border-foreground/10 bg-white">
+            <img src={images[0].src} alt={images[0].caption} className="block w-full" loading="lazy" />
+          </div>
+          <figcaption className="mt-3 text-[10px] uppercase tracking-[0.25em] text-foreground/60">
+            Fig. 01 — {images[0].caption}
+          </figcaption>
+        </figure>
+      )}
+
       <section className="mx-auto mt-12 max-w-3xl space-y-5 text-[13px] leading-7 text-foreground/85">
         {description.map((p, i) => <p key={i}>{p}</p>)}
       </section>
 
       <section className="mt-16 space-y-16">
-        {images.map((img, i) => (
+        {images.slice(1).map((img, i) => (
           <figure key={i} className={img.full ? "" : "mx-auto max-w-5xl"}>
             <div className="overflow-hidden border border-foreground/10 bg-white">
               <img src={img.src} alt={img.caption} className="block w-full" loading="lazy" />
             </div>
             <figcaption className="mt-3 text-[10px] uppercase tracking-[0.25em] text-foreground/60">
-              Fig. {String(i + 1).padStart(2, "0")} — {img.caption}
+              Fig. {String(i + 2).padStart(2, "0")} — {img.caption}
             </figcaption>
           </figure>
         ))}
