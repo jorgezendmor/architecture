@@ -64,7 +64,11 @@
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.18 0.01 260);
+  --accent-blue: oklch(0.78 0.14 240);
+  --accent-blue-strong: oklch(0.62 0.21 250);
+  --ink: oklch(0.15 0.01 260);
+  --rule: oklch(0.15 0.01 260);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
@@ -140,5 +144,22 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+}
+
+@layer utilities {
+  .text-accent-blue { color: var(--accent-blue-strong); }
+  .bg-sky { background-color: oklch(0.88 0.06 240); }
+  .bg-ink { background-color: var(--ink); color: oklch(0.96 0.01 240); }
+  .rule-ink { border-color: var(--ink); }
 }

@@ -72,20 +72,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Jorge Zendejas Moran — Architecture Portfolio" },
+      { name: "description", content: "Architecture portfolio of Jorge Zendejas Moran — second-year student at the Huckabee College of Architecture, Texas Tech University." },
+      { name: "author", content: "Jorge Zendejas Moran" },
+      { property: "og:title", content: "Jorge Zendejas Moran — Architecture Portfolio" },
+      { property: "og:description", content: "Selected architectural works and studies." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "google", content: "notranslate" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" },
     ],
   }),
   shellComponent: RootShell,
@@ -113,7 +117,38 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <SiteHeader />
       <Outlet />
+      <SiteFooter />
     </QueryClientProvider>
+  );
+}
+
+function SiteHeader() {
+  return (
+    <header className="sticky top-0 z-40 border-b border-foreground/80 bg-background/95 backdrop-blur">
+      <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 text-[11px] uppercase tracking-[0.2em]">
+        <Link to="/" className="font-medium">Jorge Zendejas Moran</Link>
+        <nav className="flex flex-wrap gap-x-6 gap-y-2">
+          <Link to="/" activeOptions={{ exact: true }} activeProps={{ className: "text-accent-blue" }}>00 · Index</Link>
+          <Link to="/chichu" activeProps={{ className: "text-accent-blue" }}>01 · Chichu</Link>
+          <Link to="/lava" activeProps={{ className: "text-accent-blue" }}>02 · L.A.V.A</Link>
+          <Link to="/retreat" activeProps={{ className: "text-accent-blue" }}>03 · Retreat</Link>
+          <Link to="/drainage" activeProps={{ className: "text-accent-blue" }}>04 · Drainage</Link>
+        </nav>
+      </div>
+    </header>
+  );
+}
+
+function SiteFooter() {
+  return (
+    <footer className="mt-24 border-t border-foreground/80">
+      <div className="mx-auto flex max-w-[1400px] flex-col gap-3 px-6 py-8 text-[11px] uppercase tracking-[0.2em] sm:flex-row sm:items-center sm:justify-between">
+        <span>Portfolio · 2025</span>
+        <span>jorgezendmor@gmail.com · (915) 270-7582</span>
+        <span>Jorge Zendejas Moran</span>
+      </div>
+    </footer>
   );
 }
