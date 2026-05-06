@@ -135,6 +135,7 @@ function SiteHeader() {
           <Link to="/lava" activeProps={{ className: "text-accent-blue" }}>02 · L.A.V.A</Link>
           <Link to="/retreat" activeProps={{ className: "text-accent-blue" }}>03 · Retreat</Link>
           <Link to="/drainage" activeProps={{ className: "text-accent-blue" }}>04 · Drainage</Link>
+          <Link to="/about" activeProps={{ className: "text-accent-blue" }}>About</Link>
         </nav>
       </div>
     </header>
