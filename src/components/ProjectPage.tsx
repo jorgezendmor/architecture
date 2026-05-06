@@ -26,9 +26,6 @@ export function ProjectPage({ number, title, subtitle, description, images, prev
           <div className="overflow-hidden bg-white flex justify-center">
             <img src={images[0].src} alt={images[0].caption} className="block max-h-[80vh] w-auto max-w-full object-contain" loading="lazy" />
           </div>
-          <figcaption className="mt-3 text-[10px] uppercase tracking-[0.25em] text-foreground/60">
-            Fig. 01 — {images[0].caption}
-          </figcaption>
         </figure>
       )}
 
@@ -42,9 +39,6 @@ export function ProjectPage({ number, title, subtitle, description, images, prev
             <div className="overflow-hidden bg-white flex justify-center">
               <img src={img.src} alt={img.caption} className="block max-h-[80vh] w-auto max-w-full object-contain" loading="lazy" />
             </div>
-            <figcaption className="mt-3 text-[10px] uppercase tracking-[0.25em] text-foreground/60">
-              Fig. {String(i + 2).padStart(2, "0")} — {img.caption}
-            </figcaption>
           </figure>
         ))}
       </section>
