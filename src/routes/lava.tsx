@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProjectPage } from "@/components/ProjectPage";
 import p06 from "@/assets/portfolio/page-06.jpg";
-import p07 from "@/assets/portfolio/page-07.jpg";
+import p07 from "@/assets/portfolio/page-07-new.png";
 import p08 from "@/assets/portfolio/page-08.jpg";
 import p09 from "@/assets/portfolio/page-09.jpg";
 
