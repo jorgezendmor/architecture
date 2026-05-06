@@ -107,46 +107,30 @@ function Index() {
           <span className="text-[11px] uppercase tracking-[0.3em] text-foreground/60">Spread 03</span>
         </div>
 
-        {/* Thumbnails row sitting on a single horizontal rule, like the book */}
-        <div className="relative">
-          <div className="grid grid-cols-2 items-end gap-x-6 gap-y-16 md:grid-cols-4">
-            {projects.map((p) => (
-              <Link
-                key={p.n}
-                to={p.to}
-                className="group flex flex-col items-center text-center"
-              >
-                <div className="flex h-[220px] w-full items-end justify-center md:h-[280px]">
-                  <img
-                    src={p.img}
-                    alt={p.title}
-                    className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:-translate-y-1"
-                    loading="lazy"
-                  />
-                </div>
-              </Link>
-            ))}
-          </div>
-
-          {/* the long horizontal rule the images rest on */}
-          <div className="mt-0 border-t border-foreground" />
-
-          <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
-            {projects.map((p) => (
-              <Link
-                key={p.n}
-                to={p.to}
-                className="group block text-center"
-              >
-                <p className="text-3xl tracking-[0.15em] transition-colors group-hover:text-accent-blue md:text-4xl">
-                  {p.n}
-                </p>
-                <h3 className="mt-6 text-[11px] uppercase tracking-[0.25em] text-foreground/80 group-hover:text-accent-blue">
-                  {p.title}
-                </h3>
-              </Link>
-            ))}
-          </div>
+        <div className="grid grid-cols-2 gap-x-6 gap-y-16 md:grid-cols-4">
+          {projects.map((p) => (
+            <Link
+              key={p.n}
+              to={p.to}
+              className="group flex flex-col items-center text-center"
+            >
+              <div className="flex h-[220px] w-full items-end justify-center md:h-[280px]">
+                <img
+                  src={p.img}
+                  alt={p.title}
+                  className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:-translate-y-1"
+                  loading="lazy"
+                />
+              </div>
+              <div className="w-full border-t border-foreground" />
+              <p className="mt-8 text-3xl tracking-[0.15em] transition-colors group-hover:text-accent-blue md:text-4xl">
+                {p.n}
+              </p>
+              <h3 className="mt-6 text-[11px] uppercase tracking-[0.25em] text-foreground/80 transition-colors group-hover:text-accent-blue">
+                {p.title}
+              </h3>
+            </Link>
+          ))}
         </div>
       </section>
     </main>
