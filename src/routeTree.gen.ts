@@ -9,8 +9,32 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as RetreatRouteImport } from './routes/retreat'
+import { Route as LavaRouteImport } from './routes/lava'
+import { Route as DrainageRouteImport } from './routes/drainage'
+import { Route as ChichuRouteImport } from './routes/chichu'
 import { Route as IndexRouteImport } from './routes/index'
 
+const RetreatRoute = RetreatRouteImport.update({
+  id: '/retreat',
+  path: '/retreat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LavaRoute = LavaRouteImport.update({
+  id: '/lava',
+  path: '/lava',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DrainageRoute = DrainageRouteImport.update({
+  id: '/drainage',
+  path: '/drainage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChichuRoute = ChichuRouteImport.update({
+  id: '/chichu',
+  path: '/chichu',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +43,72 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/chichu': typeof ChichuRoute
+  '/drainage': typeof DrainageRoute
+  '/lava': typeof LavaRoute
+  '/retreat': typeof RetreatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/chichu': typeof ChichuRoute
+  '/drainage': typeof DrainageRoute
+  '/lava': typeof LavaRoute
+  '/retreat': typeof RetreatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/chichu': typeof ChichuRoute
+  '/drainage': typeof DrainageRoute
+  '/lava': typeof LavaRoute
+  '/retreat': typeof RetreatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/chichu' | '/drainage' | '/lava' | '/retreat'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/chichu' | '/drainage' | '/lava' | '/retreat'
+  id: '__root__' | '/' | '/chichu' | '/drainage' | '/lava' | '/retreat'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ChichuRoute: typeof ChichuRoute
+  DrainageRoute: typeof DrainageRoute
+  LavaRoute: typeof LavaRoute
+  RetreatRoute: typeof RetreatRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/retreat': {
+      id: '/retreat'
+      path: '/retreat'
+      fullPath: '/retreat'
+      preLoaderRoute: typeof RetreatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lava': {
+      id: '/lava'
+      path: '/lava'
+      fullPath: '/lava'
+      preLoaderRoute: typeof LavaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/drainage': {
+      id: '/drainage'
+      path: '/drainage'
+      fullPath: '/drainage'
+      preLoaderRoute: typeof DrainageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/chichu': {
+      id: '/chichu'
+      path: '/chichu'
+      fullPath: '/chichu'
+      preLoaderRoute: typeof ChichuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,7 +121,21 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ChichuRoute: ChichuRoute,
+  DrainageRoute: DrainageRoute,
+  LavaRoute: LavaRoute,
+  RetreatRoute: RetreatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
