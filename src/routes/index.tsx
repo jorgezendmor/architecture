@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import p01 from "@/assets/portfolio/page-01.jpg";
-import p03 from "@/assets/portfolio/page-03.jpg";
-import p06 from "@/assets/portfolio/page-06.jpg";
-import p10 from "@/assets/portfolio/page-10.jpg";
-import p13 from "@/assets/portfolio/page-13.jpg";
+import toc1 from "@/assets/portfolio/toc-01.jpg";
+import toc2 from "@/assets/portfolio/toc-02.jpg";
+import toc3 from "@/assets/portfolio/toc-03.jpg";
+import toc4 from "@/assets/portfolio/toc-04.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -17,10 +17,10 @@ export const Route = createFileRoute("/")({
 });
 
 const projects = [
-  { n: "01", title: "Chichu Art Museum", sub: "Precedent · Tadao Ando", to: "/chichu", img: p03 },
-  { n: "02", title: "L.A.V.A", sub: "Lubbock's Academy of Visual Arts", to: "/lava", img: p06 },
-  { n: "03", title: "Travelers Retreat", sub: "Palo Duro Canyon", to: "/retreat", img: p10 },
-  { n: "04", title: "Drainage System Analysis", sub: "Lubbock, Texas", to: "/drainage", img: p13 },
+  { n: "01", title: "Chichu Art Museum", to: "/chichu", img: toc1 },
+  { n: "02", title: "Lubbock's Academy of Visual Arts", to: "/lava", img: toc2 },
+  { n: "03", title: "Travelers Retreat", to: "/retreat", img: toc3 },
+  { n: "04", title: "Lubbock's Drainage System Analysis", to: "/drainage", img: toc4 },
 ];
 
 function Index() {
