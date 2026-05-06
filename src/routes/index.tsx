@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-import p01 from "@/assets/portfolio/page-01.jpg";
 import toc1 from "@/assets/portfolio/toc-01.jpg";
 import toc2 from "@/assets/portfolio/toc-02.jpg";
 import toc3 from "@/assets/portfolio/toc-03.jpg";
