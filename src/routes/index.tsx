@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-import p01 from "@/assets/portfolio/page-01.jpg";
 import toc1 from "@/assets/portfolio/toc-01.jpg";
 import toc2 from "@/assets/portfolio/toc-02.jpg";
 import toc3 from "@/assets/portfolio/toc-03.jpg";
@@ -34,9 +33,6 @@ function Index() {
           <p className="mt-6 pr-[4%] text-right text-base tracking-[0.3em] md:text-lg">
             JORGE ZENDEJAS MORAN
           </p>
-        </div>
-        <div className="overflow-hidden">
-          <img src={p01} alt="Portfolio cover" className="block w-full" />
         </div>
       </section>
 
