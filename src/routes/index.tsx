@@ -107,14 +107,14 @@ function Index() {
           <span className="text-[11px] uppercase tracking-[0.3em] text-foreground/60">Spread 03</span>
         </div>
 
-        <div className="grid grid-cols-2 gap-x-6 gap-y-16 md:grid-cols-4">
+        <div className="relative grid grid-cols-2 gap-x-6 gap-y-16 md:grid-cols-4">
           {projects.map((p) => (
             <Link
               key={p.n}
               to={p.to}
-              className="group flex flex-col items-center text-center"
+              className="group relative z-10 flex flex-col items-center text-center"
             >
-              <div className="flex h-[220px] w-full items-end justify-center md:h-[280px]">
+              <div className="flex h-[220px] w-full items-end justify-center bg-background md:h-[280px]">
                 <img
                   src={p.img}
                   alt={p.title}
@@ -130,6 +130,12 @@ function Index() {
               </h3>
             </Link>
           ))}
+
+          {/* Horizontal baseline rule that visually sits behind the row, hidden by image bg */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute left-0 right-0 top-[220px] z-0 border-t border-foreground md:top-[280px]"
+          />
         </div>
       </section>
     </main>
