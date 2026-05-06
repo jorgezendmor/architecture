@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProjectPage } from "@/components/ProjectPage";
-import p13 from "@/assets/portfolio/page-13.jpg";
+import p13 from "@/assets/portfolio/page-13.svg";
 
 export const Route = createFileRoute("/drainage")({
   head: () => ({
