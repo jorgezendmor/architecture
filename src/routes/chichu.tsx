@@ -23,7 +23,7 @@ export const Route = createFileRoute("/chichu")({
       images={[
         { src: p04, caption: "​", full: true },
         { src: p05, caption: "First & Second Basement Plans", full: true },
-        { src: p06, caption: "Section Perspective · Walter De Maria Exhibition", full: true },
+        { src: p06, caption: "​", full: true },
       ]}
       next={{ to: "/lava", label: "02 · L.A.V.A" }}
     />
