@@ -35,9 +35,6 @@ function Index() {
             JORGE ZENDEJAS MORAN
           </p>
         </div>
-        <div className="overflow-hidden">
-          <img src={p01} alt="Portfolio cover" className="block w-full" />
-        </div>
       </section>
 
       {/* ABOUT */}
