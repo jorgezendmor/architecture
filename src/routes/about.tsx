@@ -43,10 +43,10 @@ function AboutPage() {
 
           <div>
             <h2 className="text-accent-blue text-sm">Skills</h2>
-            <ul className="mt-4 space-y-3 text-[13px]">
-              <li>Adobe Photoshop</li>
-              <li>Adobe Illustrator</li>
-              <li>Rhinoceros</li>
+            <ul className="mt-4 space-y-2 text-[13px]">
+              <li className="flex h-6 items-center">Adobe Photoshop</li>
+              <li className="flex h-6 items-center">Adobe Illustrator</li>
+              <li className="flex h-6 items-center">Rhinoceros</li>
             </ul>
           </div>
         </section>
@@ -77,16 +77,21 @@ function AboutPage() {
           </Row>
 
           <div>
-            <div className="grid grid-cols-10 gap-2">
-              {Array.from({ length: 30 }).map((_, i) => (
-                <span
-                  key={i}
-                  className="aspect-square rounded-sm"
-                  style={{
-                    background: i < 18 ? "oklch(0.62 0.21 250)" : "transparent",
-                    border: "1px solid oklch(0.62 0.21 250)",
-                  }}
-                />
+            <h2 className="text-accent-blue text-sm opacity-0">Skills</h2>
+            <div className="mt-4 space-y-2">
+              {[8, 7, 6].map((filled, rowIdx) => (
+                <div key={rowIdx} className="flex h-6 items-center gap-1.5">
+                  {Array.from({ length: 10 }).map((_, i) => (
+                    <span
+                      key={i}
+                      className="h-4 w-4 rounded-sm"
+                      style={{
+                        background: i < filled ? "oklch(0.62 0.21 250)" : "transparent",
+                        border: "1px solid oklch(0.62 0.21 250)",
+                      }}
+                    />
+                  ))}
+                </div>
               ))}
             </div>
           </div>
