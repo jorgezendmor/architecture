@@ -21,7 +21,7 @@ export const Route = createFileRoute("/chichu")({
         "This was the main idea that was gained from the Chichu Art Museum and implemented into L.A.V.A.",
       ]}
       images={[
-        { src: p04, caption: "Exploded Axonometric · Site & Subterranean Volumes", full: true },
+        { src: p04, caption: "​", full: true },
         { src: p05, caption: "First & Second Basement Plans", full: true },
         { src: p06, caption: "Section Perspective · Walter De Maria Exhibition", full: true },
       ]}
