@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import p01 from "@/assets/portfolio/page-01.jpg";
-import p03 from "@/assets/portfolio/page-03.jpg";
-import p06 from "@/assets/portfolio/page-06.jpg";
-import p10 from "@/assets/portfolio/page-10.jpg";
-import p13 from "@/assets/portfolio/page-13.jpg";
+import toc1 from "@/assets/portfolio/toc-01.jpg";
+import toc2 from "@/assets/portfolio/toc-02.jpg";
+import toc3 from "@/assets/portfolio/toc-03.jpg";
+import toc4 from "@/assets/portfolio/toc-04.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -17,10 +17,10 @@ export const Route = createFileRoute("/")({
 });
 
 const projects = [
-  { n: "01", title: "Chichu Art Museum", sub: "Precedent · Tadao Ando", to: "/chichu", img: p03 },
-  { n: "02", title: "L.A.V.A", sub: "Lubbock's Academy of Visual Arts", to: "/lava", img: p06 },
-  { n: "03", title: "Travelers Retreat", sub: "Palo Duro Canyon", to: "/retreat", img: p10 },
-  { n: "04", title: "Drainage System Analysis", sub: "Lubbock, Texas", to: "/drainage", img: p13 },
+  { n: "01", title: "Chichu Art Museum", to: "/chichu", img: toc1 },
+  { n: "02", title: "Lubbock's Academy of Visual Arts", to: "/lava", img: toc2 },
+  { n: "03", title: "Travelers Retreat", to: "/retreat", img: toc3 },
+  { n: "04", title: "Lubbock's Drainage System Analysis", to: "/drainage", img: toc4 },
 ];
 
 function Index() {
@@ -101,33 +101,52 @@ function Index() {
       </section>
 
       {/* PROJECTS INDEX */}
-      <section className="mx-auto max-w-[1400px] px-6 py-24">
-        <div className="flex items-end justify-between border-b border-foreground pb-4">
-          <h2 className="text-2xl tracking-[0.3em]">Selected Works</h2>
-          <span className="text-[11px] uppercase tracking-[0.25em] text-foreground/60">04 Projects</span>
+      <section className="mx-auto max-w-[1500px] px-6 py-24">
+        <div className="mb-16 flex items-end justify-between">
+          <span className="text-[11px] uppercase tracking-[0.3em] text-foreground/60">Table of Contents</span>
+          <span className="text-[11px] uppercase tracking-[0.3em] text-foreground/60">Spread 03</span>
         </div>
 
-        <div className="mt-12 grid gap-x-8 gap-y-16 md:grid-cols-2">
-          {projects.map((p) => (
-            <Link key={p.n} to={p.to} className="group block">
-              <div className="overflow-hidden border border-foreground/10 bg-white">
-                <img
-                  src={p.img}
-                  alt={p.title}
-                  className="block aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-                  loading="lazy"
-                />
-              </div>
-              <div className="mt-4 flex items-baseline justify-between">
-                <div>
-                  <p className="text-accent-blue text-[11px] uppercase tracking-[0.3em]">{p.n}</p>
-                  <h3 className="mt-1 text-base md:text-lg">{p.title}</h3>
-                  <p className="mt-1 text-[11px] uppercase tracking-[0.25em] text-foreground/60">{p.sub}</p>
+        {/* Thumbnails row sitting on a single horizontal rule, like the book */}
+        <div className="relative">
+          <div className="grid grid-cols-2 items-end gap-x-6 gap-y-16 md:grid-cols-4">
+            {projects.map((p) => (
+              <Link
+                key={p.n}
+                to={p.to}
+                className="group flex flex-col items-center text-center"
+              >
+                <div className="flex h-[220px] w-full items-end justify-center md:h-[280px]">
+                  <img
+                    src={p.img}
+                    alt={p.title}
+                    className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:-translate-y-1"
+                    loading="lazy"
+                  />
                 </div>
-                <span className="text-[11px] uppercase tracking-[0.25em] group-hover:text-accent-blue">View →</span>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
+
+          {/* the long horizontal rule the images rest on */}
+          <div className="mt-0 border-t border-foreground" />
+
+          <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
+            {projects.map((p) => (
+              <Link
+                key={p.n}
+                to={p.to}
+                className="group block text-center"
+              >
+                <p className="text-3xl tracking-[0.15em] transition-colors group-hover:text-accent-blue md:text-4xl">
+                  {p.n}
+                </p>
+                <h3 className="mt-6 text-[11px] uppercase tracking-[0.25em] text-foreground/80 group-hover:text-accent-blue">
+                  {p.title}
+                </h3>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </main>
