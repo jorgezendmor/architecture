@@ -10,7 +10,7 @@ export const Route = createFileRoute("/about")({
 });
 
 function Row({ children }: { children: React.ReactNode }) {
-  return <div className="min-h-[180px]">{children}</div>;
+  return <div className="mb-12 md:mb-0 md:min-h-[180px]">{children}</div>;
 }
 
 function AboutPage() {
@@ -48,13 +48,13 @@ function AboutPage() {
                 { name: "Adobe Illustrator", level: 7 },
                 { name: "Rhinoceros", level: 6 },
               ].map((s) => (
-                <li key={s.name} className="grid h-6 grid-cols-[1fr_auto] items-center gap-3">
-                  <span>{s.name}</span>
-                  <span className="flex items-center gap-1.5 md:hidden">
+                <li key={s.name} className="flex h-6 items-center justify-between gap-3">
+                  <span className="shrink-0">{s.name}</span>
+                  <span className="flex items-center gap-1 md:hidden">
                     {Array.from({ length: 10 }).map((_, i) => (
                       <span
                         key={i}
-                        className="h-4 w-4 rounded-sm"
+                        className="h-3 w-3 rounded-sm"
                         style={{
                           background: i < s.level ? "oklch(0.62 0.21 250)" : "transparent",
                           border: "1px solid oklch(0.62 0.21 250)",
