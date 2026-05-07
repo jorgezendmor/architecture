@@ -5,7 +5,7 @@ interface Props {
   title: string;
   subtitle?: string;
   description: string[];
-  images: { src: string; caption: string; full?: boolean }[];
+  images: { src: string; caption: string; full?: boolean; wide?: boolean }[];
   prev?: { to: string; label: string };
   next?: { to: string; label: string };
 }
@@ -37,7 +37,7 @@ export function ProjectPage({ number, title, subtitle, description, images, prev
         {images.slice(1).map((img, i) => (
           <figure key={i} className={img.full ? "" : "mx-auto max-w-5xl"}>
             <div className="overflow-hidden bg-white flex justify-center">
-              <img src={img.src} alt={img.caption} className="block max-h-[80vh] w-auto max-w-full object-contain" loading="lazy" />
+              <img src={img.src} alt={img.caption} className={img.wide ? "block w-full h-auto object-contain" : "block max-h-[80vh] w-auto max-w-full object-contain"} loading="lazy" />
             </div>
           </figure>
         ))}
