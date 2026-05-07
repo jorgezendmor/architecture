@@ -58,6 +58,7 @@ function Index() {
                   loading="lazy"
                 />
               </div>
+              <div className="mt-6 w-full border-t border-foreground" />
               <p className="mt-8 text-3xl tracking-[0.15em] transition-colors group-hover:text-accent-blue md:text-4xl">
                 {p.n}
               </p>
