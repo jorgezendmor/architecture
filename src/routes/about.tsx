@@ -10,7 +10,7 @@ export const Route = createFileRoute("/about")({
 });
 
 function Row({ children }: { children: React.ReactNode }) {
-  return <div className="mb-12 md:mb-0 md:min-h-[180px]">{children}</div>;
+  return <div className="mb-12 md:mb-0 md:min-h-[240px]">{children}</div>;
 }
 
 function AboutPage() {
