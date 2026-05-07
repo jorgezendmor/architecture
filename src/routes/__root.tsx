@@ -130,11 +130,11 @@ function SiteHeader() {
       <div className="mx-auto flex max-w-[1400px] flex-col gap-3 px-4 py-3 text-[10px] uppercase tracking-[0.2em] sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-4 sm:text-[11px]">
         <Link to="/" className="font-medium">Jorge Zendejas Moran</Link>
         <nav className="flex flex-wrap gap-x-4 gap-y-2 sm:gap-x-6">
-          <Link to="/" activeOptions={{ exact: true }} activeProps={{ className: "text-accent-blue" }}>00 · Index</Link>
-          <Link to="/chichu" activeProps={{ className: "text-accent-blue" }}>01 · Chichu</Link>
-          <Link to="/lava" activeProps={{ className: "text-accent-blue" }}>02 · L.A.V.A</Link>
-          <Link to="/retreat" activeProps={{ className: "text-accent-blue" }}>03 · Retreat</Link>
-          <Link to="/drainage" activeProps={{ className: "text-accent-blue" }}>04 · Drainage</Link>
+          <Link to="/" activeOptions={{ exact: true }} activeProps={{ className: "text-accent-blue" }}>Index</Link>
+          <Link to="/chichu" title="Chichu Art Museum" activeProps={{ className: "text-accent-blue" }}>01</Link>
+          <Link to="/lava" title="Lubbock's Academy of Visual Arts" activeProps={{ className: "text-accent-blue" }}>02</Link>
+          <Link to="/retreat" title="Travelers Retreat" activeProps={{ className: "text-accent-blue" }}>03</Link>
+          <Link to="/drainage" title="Lubbock's Drainage System Analysis" activeProps={{ className: "text-accent-blue" }}>04</Link>
           <Link to="/about" activeProps={{ className: "text-accent-blue" }}>More About Me</Link>
         </nav>
       </div>
