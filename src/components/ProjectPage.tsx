@@ -14,7 +14,7 @@ interface Props {
   next?: { to: string; label: string };
 }
 
-function ImageBlock({ img }: { img: ImageItem }) {
+function ImageBlock({ img, isHero }: { img: ImageItem; isHero?: boolean }) {
   if ("leftSrc" in img) {
     return (
       <>
@@ -24,6 +24,18 @@ function ImageBlock({ img }: { img: ImageItem }) {
         </div>
         <div className="hidden md:flex overflow-hidden bg-white justify-center">
           <img src={img.src} alt={img.caption} className="block max-h-[80vh] w-auto max-w-full object-contain" loading="lazy" />
+        </div>
+      </>
+    );
+  }
+  if (isHero) {
+    return (
+      <>
+        <div className="md:hidden overflow-hidden bg-white flex justify-center">
+          <img src={img.src} alt={img.caption} className={img.wide ? "block w-full h-auto object-contain" : "block max-h-[80vh] w-auto max-w-full object-contain"} loading="lazy" />
+        </div>
+        <div className="hidden md:flex overflow-hidden bg-white justify-center">
+          <img src={img.src} alt={img.caption} className="block max-h-[calc(100vh-260px)] w-auto max-w-full object-contain mx-auto" loading="lazy" />
         </div>
       </>
     );
@@ -63,7 +75,7 @@ export function ProjectPage({ number, title, subtitle, description, images, prev
 
       {images[0] && (
         <figure className="mt-12">
-          <ImageBlock img={images[0]} />
+          <ImageBlock img={images[0]} isHero />
         </figure>
       )}
 
