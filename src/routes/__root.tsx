@@ -77,11 +77,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Architecture portfolio of Jorge Zendejas Moran — second-year student at the Huckabee College of Architecture, Texas Tech University." },
       { name: "author", content: "Jorge Zendejas Moran" },
       { property: "og:title", content: "Jorge Zendejas Moran — Architecture Portfolio" },
-      { property: "og:description", content: "Selected architectural works and studies." },
+      { property: "og:description", content: "Architecture portfolio of Jorge Zendejas Moran — second-year student at the Huckabee College of Architecture, Texas Tech University." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "google", content: "notranslate" },
+      { name: "twitter:title", content: "Jorge Zendejas Moran — Architecture Portfolio" },
+      { name: "twitter:description", content: "Architecture portfolio of Jorge Zendejas Moran — second-year student at the Huckabee College of Architecture, Texas Tech University." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c655d5a9-ea16-4edb-ad1e-8e009da9d091/id-preview-ecd1adac--4fcb072a-94dc-4139-abb8-e8bae087f0b3.lovable.app-1778127127305.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c655d5a9-ea16-4edb-ad1e-8e009da9d091/id-preview-ecd1adac--4fcb072a-94dc-4139-abb8-e8bae087f0b3.lovable.app-1778127127305.png" },
     ],
     links: [
       {
