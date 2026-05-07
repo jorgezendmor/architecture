@@ -24,7 +24,7 @@ export const Route = createFileRoute("/chichu")({
         { src: p05, caption: "First & Second Basement Plans", full: true },
         { src: p06, caption: "​", full: true },
       ]}
-      next={{ to: "/lava", label: "02 · L.A.V.A" }}
+      next={{ to: "/lava", label: "02" }}
     />
   ),
 });
