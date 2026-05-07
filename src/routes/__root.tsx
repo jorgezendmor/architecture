@@ -127,9 +127,9 @@ function RootComponent() {
 function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-foreground/80 bg-background/95 backdrop-blur">
-      <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 text-[11px] uppercase tracking-[0.2em]">
+      <div className="mx-auto flex max-w-[1400px] flex-col gap-3 px-4 py-3 text-[10px] uppercase tracking-[0.2em] sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-4 sm:text-[11px]">
         <Link to="/" className="font-medium">Jorge Zendejas Moran</Link>
-        <nav className="flex flex-wrap gap-x-6 gap-y-2">
+        <nav className="flex flex-wrap gap-x-4 gap-y-2 sm:gap-x-6">
           <Link to="/" activeOptions={{ exact: true }} activeProps={{ className: "text-accent-blue" }}>00 · Index</Link>
           <Link to="/chichu" activeProps={{ className: "text-accent-blue" }}>01 · Chichu</Link>
           <Link to="/lava" activeProps={{ className: "text-accent-blue" }}>02 · L.A.V.A</Link>
