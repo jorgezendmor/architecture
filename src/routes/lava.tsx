@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ProjectPage } from "@/components/ProjectPage";
 import p06 from "@/assets/portfolio/page-06-new.svg";
 import p08 from "@/assets/portfolio/page-08.jpg";
-import p09 from "@/assets/portfolio/page-09.jpg";
+import p09 from "@/assets/portfolio/page-09-new.svg";
 
 export const Route = createFileRoute("/lava")({
   head: () => ({
