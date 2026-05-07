@@ -1,19 +1,27 @@
-## Plan
+# Fix About page mobile layout
 
-Make the first (hero) image on every project page fit fully within the viewport at 100% zoom on desktop, so users see the whole image without scrolling.
+Two issues on the mobile (sky / blue) section of `/about`:
 
-### Problem
-Currently the first image uses the same `ImageBlock` as the rest. When the image is marked `wide: true` (e.g. retreat's p10, lava's p06), it renders as `w-full h-auto`, which on desktop becomes very tall and overflows the viewport. Even non-wide hero images can overflow because `max-h-[80vh]` doesn't account for the page header/title block above them.
+1. The "About Me" paragraph sits too close to the "Contacts" heading because every `Row` uses a fixed `min-h-[180px]` that doesn't account for the paragraph's wrapped height on narrow screens.
+2. In the Skills list, each row's label and its 10-square level indicator stack vertically on mobile, making it unclear which row of squares belongs to which skill.
 
-### Change
+## Changes (single file: `src/routes/about.tsx`)
 
-**`src/components/ProjectPage.tsx`** — add an `isHero` rendering mode used only for the first image:
-- On desktop (`md:` and up), render the hero image with `max-h-[calc(100vh-260px)] w-auto max-w-full object-contain mx-auto`, regardless of the `wide` flag. The 260px reserves space for the title block + top/bottom padding so the whole image is visible at 100% zoom on a typical laptop.
-- Ignore `wide` for the hero on desktop (wide only meant "fill width"; for the hero we want "fit in viewport").
-- Mobile behavior for the hero stays exactly as today (full width, natural height) — the user only asked about the web version.
-- All non-hero images (the rest of the gallery) keep their current behavior unchanged.
+### 1. Even vertical spacing on mobile
+- Replace the fixed `min-h-[180px]` on `Row` with responsive spacing:
+  - Mobile: no fixed min-height; use generous `mb-12` between rows so each block breathes evenly.
+  - Desktop (`md:`): keep current `min-h-[180px]` behavior so the two columns stay aligned.
+- Result: "About Me" paragraph no longer crowds the "Contacts" heading on mobile.
 
-No changes needed in the per-project route files (`chichu.tsx`, `lava.tsx`, `retreat.tsx`, `drainage.tsx`) — the hero is always `images[0]`, which `ProjectPage` already renders separately.
+### 2. Skills row alignment on mobile
+- Currently the label + squares share `grid-cols-[1fr_auto]`, but the squares container is `hidden md:hidden`-style logic that pushes them to a new visual line at narrow widths.
+- Update each skill `<li>` so on mobile the skill name and its 10-square row sit on the **same horizontal line**:
+  - Use `flex items-center justify-between gap-3` (or keep the 2-col grid) and ensure the squares stay inline at all widths.
+  - Reduce square size slightly on mobile (`h-3 w-3`) so all 10 fit next to the label without wrapping at 360–414px viewports.
+- Remove the duplicate desktop-only squares block in the right (ink) column on mobile — it already only renders on `md:` so no change needed there; the mobile squares come from the left column inline with each label.
 
-### Result
-On desktop, the first image of each project (Chichu, L.A.V.A, Travelers Retreat, Drainage) is always fully visible within the browser window at 100% zoom, scaled down proportionally if needed. Mobile and the rest of the gallery are untouched.
+## Out of scope
+- No changes to the desktop layout, colors, fonts, or copy.
+- No changes to the ink (right) section beyond what's required to keep desktop alignment intact.
+
+After approval I'll apply the edits and verify at the current mobile viewport.
