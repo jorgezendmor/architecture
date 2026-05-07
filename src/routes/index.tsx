@@ -26,18 +26,26 @@ function Index() {
   return (
     <main>
       {/* COVER */}
-      <section>
-        <div className="mx-auto flex min-h-screen max-w-[1400px] flex-col justify-center px-10 py-24">
+      <section className="relative">
+        <div className="mx-auto flex min-h-[70vh] max-w-[1400px] flex-col justify-center px-10 py-16">
           <h1 className="pl-[12%] text-base tracking-[0.3em] md:text-lg">PORTFOLIO</h1>
           <div className="mt-4 border-t border-foreground" />
           <p className="mt-6 pr-[4%] text-right text-base tracking-[0.3em] md:text-lg">
             JORGE ZENDEJAS MORAN
           </p>
         </div>
+        <a
+          href="#contents"
+          aria-label="Scroll to table of contents"
+          className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-foreground/60 transition-colors hover:text-accent-blue"
+        >
+          <span>Scroll</span>
+          <span className="h-8 w-px animate-pulse bg-foreground/60" />
+        </a>
       </section>
 
       {/* PROJECTS INDEX */}
-      <section className="mx-auto max-w-[1500px] px-6 py-24">
+      <section id="contents" className="mx-auto max-w-[1500px] scroll-mt-20 px-6 py-16">
         <div className="mb-16 flex items-end justify-between">
           <span className="text-[11px] uppercase tracking-[0.3em] text-foreground/60">Table of Contents</span>
           <span className="text-[11px] uppercase tracking-[0.3em] text-foreground/60">​</span>
