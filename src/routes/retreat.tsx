@@ -26,7 +26,7 @@ export const Route = createFileRoute("/retreat")({
       images={[
         { src: p10, caption: "Staggered Section Perspective B", full: true, wide: true },
         { src: p11, leftSrc: p11L, rightSrc: p11R, caption: "Arch Perspective", full: true },
-        { src: p12, caption: "Tunnel Perspective & Site Section", full: true, wide: true },
+        { src: p12, caption: "Tunnel Perspective & Site Section", full: true, wide: true, mobileScroll: true },
       ]}
       prev={{ to: "/lava", label: "02" }}
       next={{ to: "/drainage", label: "04" }}
