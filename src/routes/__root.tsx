@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import logoUrl from "@/assets/logo.png";
 
 function NotFoundComponent() {
   return (
@@ -87,6 +88,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" },
@@ -128,7 +130,10 @@ function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-foreground/80 bg-background/95 backdrop-blur">
       <div className="mx-auto flex max-w-[1400px] flex-col gap-3 px-4 py-3 text-[10px] uppercase tracking-[0.2em] sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-4 sm:text-[11px]">
-        <Link to="/" className="font-medium">Jorge Zendejas Moran</Link>
+        <Link to="/" className="flex items-center gap-2 font-medium">
+          <img src={logoUrl} alt="Zendmor logo" className="h-6 w-6 object-contain" />
+          <span>Jorge Zendejas Moran</span>
+        </Link>
         <nav className="flex flex-wrap gap-x-4 gap-y-2 sm:gap-x-6">
           <Link to="/" activeOptions={{ exact: true }} activeProps={{ className: "text-accent-blue" }}>Index</Link>
           <Link to="/chichu" title="Chichu Art Museum" activeProps={{ className: "text-accent-blue" }}>01</Link>
