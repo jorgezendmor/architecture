@@ -32,7 +32,7 @@ export const Route = createFileRoute("/lava")({
          { src: p12, caption: "Perspective Render — Ave J", full: true },
       ]}
       prev={{ to: "/chichu", label: "01 · Chichu" }}
-      next={{ to: "/retreat", label: "03 · Retreat" }}
+      next={{ to: "/retreat", label: "03 · TRAVELERS Retreat" }}
     />
   ),
 });
