@@ -27,7 +27,7 @@ function Index() {
     <main>
       {/* COVER */}
       <section className="relative">
-        <div className="mx-auto flex min-h-[70vh] max-w-[1400px] flex-col justify-center px-10 py-16">
+        <div className="mx-auto flex min-h-screen max-w-[1400px] flex-col justify-center px-10 py-24">
           <h1 className="pl-[12%] text-base tracking-[0.3em] md:text-lg">PORTFOLIO</h1>
           <div className="mt-4 border-t border-foreground" />
           <p className="mt-6 pr-[4%] text-right text-base tracking-[0.3em] md:text-lg">
