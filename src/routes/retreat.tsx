@@ -1,14 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProjectPage } from "@/components/ProjectPage";
 import p10 from "@/assets/portfolio/page-10.svg";
-import p10L from "@/assets/portfolio/page-10-left.svg";
-import p10R from "@/assets/portfolio/page-10-right.svg";
 import p11 from "@/assets/portfolio/page-11.jpg";
 import p11L from "@/assets/portfolio/page-11-left.jpg";
 import p11R from "@/assets/portfolio/page-11-right.jpg";
 import p12 from "@/assets/portfolio/page-12.jpg";
-import p12L from "@/assets/portfolio/page-12-left.jpg";
-import p12R from "@/assets/portfolio/page-12-right.jpg";
 
 export const Route = createFileRoute("/retreat")({
   head: () => ({
