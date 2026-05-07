@@ -1,8 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProjectPage } from "@/components/ProjectPage";
 import p10 from "@/assets/portfolio/page-10.svg";
+import p10L from "@/assets/portfolio/page-10-left.svg";
+import p10R from "@/assets/portfolio/page-10-right.svg";
 import p11 from "@/assets/portfolio/page-11.jpg";
+import p11L from "@/assets/portfolio/page-11-left.jpg";
+import p11R from "@/assets/portfolio/page-11-right.jpg";
 import p12 from "@/assets/portfolio/page-12.jpg";
+import p12L from "@/assets/portfolio/page-12-left.jpg";
+import p12R from "@/assets/portfolio/page-12-right.jpg";
 
 export const Route = createFileRoute("/retreat")({
   head: () => ({
@@ -22,9 +28,9 @@ export const Route = createFileRoute("/retreat")({
         "The program accommodates a range of guests, offering shared hostels, private two-bedroom suites, and a free public campground. This building also contains a restaurant that's not only for residents but for local people from nearby cities that stop by to eat after hiking.",
       ]}
       images={[
-        { src: p10, caption: "Staggered Section Perspective B", full: true },
-        { src: p11, caption: "Arch Perspective", full: true },
-        { src: p12, caption: "Tunnel Perspective & Site Section", full: true },
+        { src: p10, leftSrc: p10L, rightSrc: p10R, caption: "Staggered Section Perspective B", full: true },
+        { src: p11, leftSrc: p11L, rightSrc: p11R, caption: "Arch Perspective", full: true },
+        { src: p12, leftSrc: p12L, rightSrc: p12R, caption: "Tunnel Perspective & Site Section", full: true },
       ]}
       prev={{ to: "/lava", label: "02" }}
       next={{ to: "/drainage", label: "04" }}
