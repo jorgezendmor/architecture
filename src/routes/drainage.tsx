@@ -22,7 +22,7 @@ export const Route = createFileRoute("/drainage")({
       images={[
         { src: p13, caption: "Three Main Collection Lakes — Mackenzie Park, Clapp Park, Dunbar", full: true },
       ]}
-      prev={{ to: "/retreat", label: "03 · Retreat" }}
+      prev={{ to: "/retreat", label: "03" }}
     />
   ),
 });

@@ -27,8 +27,8 @@ export const Route = createFileRoute("/lava")({
         { src: p09, caption: "North & West Elevations", full: true },
          { src: p10, caption: "Exploded Axonometric · Circulation Diagram", full: true, wide: true },
       ]}
-      prev={{ to: "/chichu", label: "01 · Chichu" }}
-      next={{ to: "/retreat", label: "03 · TRAVELERS Retreat" }}
+      prev={{ to: "/chichu", label: "01" }}
+      next={{ to: "/retreat", label: "03" }}
     />
   ),
 });
