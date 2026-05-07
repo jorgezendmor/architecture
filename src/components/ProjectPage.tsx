@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 
 type ImageItem =
-  | { src: string; caption: string; full?: boolean; wide?: boolean }
+  | { src: string; caption: string; full?: boolean; wide?: boolean; mobileScroll?: boolean }
   | { src: string; leftSrc: string; rightSrc: string; caption: string; full?: boolean };
 
 interface Props {
@@ -24,6 +24,21 @@ function ImageBlock({ img }: { img: ImageItem }) {
         </div>
         <div className="hidden md:flex overflow-hidden bg-white justify-center">
           <img src={img.src} alt={img.caption} className="block max-h-[80vh] w-auto max-w-full object-contain" loading="lazy" />
+        </div>
+      </>
+    );
+  }
+  if (img.mobileScroll) {
+    return (
+      <>
+        <div className="md:hidden">
+          <div className="overflow-x-auto bg-white -mx-6">
+            <img src={img.src} alt={img.caption} className="block h-[70vh] w-auto max-w-none" loading="lazy" />
+          </div>
+          <p className="mt-2 px-1 text-[9px] uppercase tracking-[0.2em] text-foreground/50">Swipe →</p>
+        </div>
+        <div className="hidden md:flex overflow-hidden bg-white justify-center">
+          <img src={img.src} alt={img.caption} className={img.wide ? "block w-full h-auto object-contain" : "block max-h-[80vh] w-auto max-w-full object-contain"} loading="lazy" />
         </div>
       </>
     );
