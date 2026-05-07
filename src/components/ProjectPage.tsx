@@ -30,7 +30,7 @@ export function ProjectPage({ number, title, subtitle, description, images, prev
       )}
 
       <section className="mx-auto mt-12 max-w-3xl space-y-5 text-[13px] leading-7 text-foreground/85">
-        {description.map((p, i) => <p key={i}>{p}</p>)}
+        {description.map((p, i) => <p key={i} className="indent-8">{p}</p>)}
       </section>
 
       <section className="mt-16 space-y-16">
