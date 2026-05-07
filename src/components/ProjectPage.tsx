@@ -1,13 +1,38 @@
 import { Link } from "@tanstack/react-router";
 
+type ImageItem =
+  | { src: string; caption: string; full?: boolean; wide?: boolean }
+  | { src: string; leftSrc: string; rightSrc: string; caption: string; full?: boolean };
+
 interface Props {
   number: string;
   title: string;
   subtitle?: string;
   description: string[];
-  images: { src: string; caption: string; full?: boolean; wide?: boolean }[];
+  images: ImageItem[];
   prev?: { to: string; label: string };
   next?: { to: string; label: string };
+}
+
+function ImageBlock({ img }: { img: ImageItem }) {
+  if ("leftSrc" in img) {
+    return (
+      <>
+        <div className="md:hidden flex flex-col gap-6">
+          <img src={img.leftSrc} alt={img.caption} className="block w-full h-auto object-contain bg-white" loading="lazy" />
+          <img src={img.rightSrc} alt={img.caption} className="block w-full h-auto object-contain bg-white" loading="lazy" />
+        </div>
+        <div className="hidden md:flex overflow-hidden bg-white justify-center">
+          <img src={img.src} alt={img.caption} className="block max-h-[80vh] w-auto max-w-full object-contain" loading="lazy" />
+        </div>
+      </>
+    );
+  }
+  return (
+    <div className="overflow-hidden bg-white flex justify-center">
+      <img src={img.src} alt={img.caption} className={img.wide ? "block w-full h-auto object-contain" : "block max-h-[80vh] w-auto max-w-full object-contain"} loading="lazy" />
+    </div>
+  );
 }
 
 export function ProjectPage({ number, title, subtitle, description, images, prev, next }: Props) {
@@ -23,9 +48,7 @@ export function ProjectPage({ number, title, subtitle, description, images, prev
 
       {images[0] && (
         <figure className="mt-12">
-          <div className="overflow-hidden bg-white flex justify-center">
-            <img src={images[0].src} alt={images[0].caption} className="block max-h-[80vh] w-auto max-w-full object-contain" loading="lazy" />
-          </div>
+          <ImageBlock img={images[0]} />
         </figure>
       )}
 
@@ -36,9 +59,7 @@ export function ProjectPage({ number, title, subtitle, description, images, prev
       <section className="mt-16 space-y-16">
         {images.slice(1).map((img, i) => (
           <figure key={i} className={img.full ? "" : "mx-auto max-w-5xl"}>
-            <div className="overflow-hidden bg-white flex justify-center">
-              <img src={img.src} alt={img.caption} className={img.wide ? "block w-full h-auto object-contain" : "block max-h-[80vh] w-auto max-w-full object-contain"} loading="lazy" />
-            </div>
+            <ImageBlock img={img} />
           </figure>
         ))}
       </section>
