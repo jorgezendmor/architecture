@@ -5,6 +5,7 @@ import p08 from "@/assets/portfolio/page-08-new.svg";
 import p09 from "@/assets/portfolio/page-09-new.svg";
   import p10 from "@/assets/portfolio/page-10-v5.svg";
   import p11 from "@/assets/portfolio/page-11-final.svg";
+  import p12 from "@/assets/portfolio/page-12-final.svg";
 
 export const Route = createFileRoute("/lava")({
   head: () => ({
@@ -28,6 +29,7 @@ export const Route = createFileRoute("/lava")({
         { src: p09, caption: "North & West Elevations", full: true },
          { src: p10, caption: "Exploded Axonometric · Circulation Diagram", full: true, wide: true },
          { src: p11, caption: "Perspective Render — Mac Davis Ln & Ave J", full: true },
+         { src: p12, caption: "Perspective Render — Ave J", full: true },
       ]}
       prev={{ to: "/chichu", label: "01 · Chichu" }}
       next={{ to: "/retreat", label: "03 · Retreat" }}
