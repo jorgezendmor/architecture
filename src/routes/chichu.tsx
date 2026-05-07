@@ -15,7 +15,7 @@ export const Route = createFileRoute("/chichu")({
     <ProjectPage
       number="01"
       title="Chichu Art Museum"
-      subtitle="Precedent Study · By Tadao Ando"
+      subtitle="By Tadao Ando · Precedent Study"
       description={[
         "This precedent was remodeled and studied for the L.A.V.A project. The Chichu Art Museum is built underground, containing a total of three basement levels. It has punctures that let sunlight in all the way down to the third basement. This was the main idea that was gained from the Chichu Art Museum and implemented into L.A.V.A.",
       ]}
