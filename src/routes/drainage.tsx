@@ -1,8 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProjectPage } from "@/components/ProjectPage";
 import p13 from "@/assets/portfolio/page-13.svg";
-import p13L from "@/assets/portfolio/page-13-left.svg";
-import p13R from "@/assets/portfolio/page-13-right.svg";
 
 export const Route = createFileRoute("/drainage")({
   head: () => ({
@@ -22,7 +20,7 @@ export const Route = createFileRoute("/drainage")({
         "This system is significant to the topic of drainage and water reuse because the playas function as a form of landscape-based infrastructure, managing stormwater while contributing to groundwater recharge and ecological habitats. In an area where water resources are limited, these natural basins highlight opportunities for integrating stormwater into the landscape.",
       ]}
       images={[
-        { src: p13, leftSrc: p13L, rightSrc: p13R, caption: "Three Main Collection Lakes — Mackenzie Park, Clapp Park, Dunbar", full: true },
+        { src: p13, caption: "Three Main Collection Lakes — Mackenzie Park, Clapp Park, Dunbar", full: true, wide: true },
       ]}
       prev={{ to: "/retreat", label: "03" }}
     />

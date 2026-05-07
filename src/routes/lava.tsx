@@ -1,8 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProjectPage } from "@/components/ProjectPage";
 import p06 from "@/assets/portfolio/page-06-new.svg";
-import p06L from "@/assets/portfolio/page-06-new-left.svg";
-import p06R from "@/assets/portfolio/page-06-new-right.svg";
 import p08 from "@/assets/portfolio/page-08-new.svg";
 import p08L from "@/assets/portfolio/page-08-new-left.svg";
 import p08R from "@/assets/portfolio/page-08-new-right.svg";
@@ -28,7 +26,7 @@ export const Route = createFileRoute("/lava")({
         "L.A.V.A is divided into two different sectors. The first floor is the public sector for the First Friday Art Trail event, while the second floor is a private sector where students can work. The first floor includes a reception desk, a public library, a café, an art gallery, a storage room with a loading dock, and a massive three-story-high outdoor room. The second floor has three studios, three professors' rooms, a director's room, a flex roof deck, and a connection to the second story of the outdoor room.",
       ]}
       images={[
-        { src: p06, leftSrc: p06L, rightSrc: p06R, caption: "Section Perspective — South", full: true },
+        { src: p06, caption: "Section Perspective — South", full: true, wide: true },
         { src: p08, leftSrc: p08L, rightSrc: p08R, caption: "Exploded Axonometric", full: true },
         { src: p09, leftSrc: p09L, rightSrc: p09R, caption: "North & West Elevations", full: true },
         { src: p10, caption: "Exploded Axonometric · Circulation Diagram", full: true, wide: true },
