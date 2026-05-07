@@ -146,7 +146,7 @@ function SiteFooter() {
   return (
     <footer className="mt-24 border-t border-foreground/80">
       <div className="mx-auto flex max-w-[1400px] flex-col gap-3 px-6 py-8 text-[11px] uppercase tracking-[0.2em] sm:flex-row sm:items-center sm:justify-between">
-        <span>Portfolio · 2025</span>
+        <span>Portfolio</span>
         <span>jorgezendmor@gmail.com · (915) 270-7582</span>
         <span>Jorge Zendejas Moran</span>
       </div>
