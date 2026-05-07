@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import logoUrl from "@/assets/logo.png";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -72,7 +73,10 @@ function AboutPage() {
         {/* RIGHT — ink */}
         <section className="bg-ink px-10 py-16 md:px-20 md:py-24">
           <Row>
-            <h2 className="text-accent-blue text-sm">Zendejas Moran</h2>
+            <div className="flex items-center gap-4">
+              <img src={logoUrl} alt="Zendmor logo" className="h-12 w-12 object-contain" />
+              <h2 className="text-accent-blue text-sm">Zendejas Moran</h2>
+            </div>
           </Row>
 
           <Row>
