@@ -44,9 +44,27 @@ function AboutPage() {
           <div>
             <h2 className="text-accent-blue text-sm">Skills</h2>
             <ul className="mt-4 space-y-2 text-[13px]">
-              <li className="flex h-6 items-center">Adobe Photoshop</li>
-              <li className="flex h-6 items-center">Adobe Illustrator</li>
-              <li className="flex h-6 items-center">Rhinoceros</li>
+              {[
+                { name: "Adobe Photoshop", level: 8 },
+                { name: "Adobe Illustrator", level: 7 },
+                { name: "Rhinoceros", level: 6 },
+              ].map((s) => (
+                <li key={s.name} className="grid h-6 grid-cols-[1fr_auto] items-center gap-3">
+                  <span>{s.name}</span>
+                  <span className="flex items-center gap-1.5 md:hidden">
+                    {Array.from({ length: 10 }).map((_, i) => (
+                      <span
+                        key={i}
+                        className="h-4 w-4 rounded-sm"
+                        style={{
+                          background: i < s.level ? "oklch(0.62 0.21 250)" : "transparent",
+                          border: "1px solid oklch(0.62 0.21 250)",
+                        }}
+                      />
+                    ))}
+                  </span>
+                </li>
+              ))}
             </ul>
           </div>
         </section>
@@ -74,7 +92,7 @@ function AboutPage() {
             </p>
           </Row>
 
-          <div>
+          <div className="hidden md:block">
             <h2 className="text-accent-blue text-sm opacity-0">Skills</h2>
             <div className="mt-4 space-y-2">
               {[8, 7, 6].map((filled, rowIdx) => (
