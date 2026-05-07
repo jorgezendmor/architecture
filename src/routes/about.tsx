@@ -1,6 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import logoUrl from "@/assets/logo-tall.png";
-
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
@@ -71,12 +69,7 @@ function AboutPage() {
         </section>
 
         {/* RIGHT — ink */}
-        <section className="relative bg-ink px-10 py-16 md:px-20 md:py-24">
-          <img
-            src={logoUrl}
-            alt="Zendmor logo"
-            className="pointer-events-none absolute right-6 top-1/2 hidden h-[70%] -translate-y-1/2 object-contain opacity-90 md:block"
-          />
+        <section className="bg-ink px-10 py-16 md:px-20 md:py-24">
           <Row>
             <h2 className="text-accent-blue text-sm">Zendejas Moran</h2>
           </Row>
@@ -116,10 +109,6 @@ function AboutPage() {
                 </div>
               ))}
             </div>
-          </div>
-
-          <div className="mt-10 flex justify-center md:hidden">
-            <img src={logoUrl} alt="Zendmor logo" className="h-64 w-auto object-contain" />
           </div>
         </section>
       </div>
