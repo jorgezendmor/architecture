@@ -4,7 +4,7 @@ import p06 from "@/assets/portfolio/page-06-new.svg";
 import p08 from "@/assets/portfolio/page-08-new.svg";
 import p09 from "@/assets/portfolio/page-09-new.svg";
  import p10 from "@/assets/portfolio/page-10-updated.svg";
- import p11 from "@/assets/portfolio/page-11-new.svg";
+  import p11 from "@/assets/portfolio/page-11-final.svg";
 
 export const Route = createFileRoute("/lava")({
   head: () => ({
