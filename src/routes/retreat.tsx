@@ -28,9 +28,9 @@ export const Route = createFileRoute("/retreat")({
         "The program accommodates a range of guests, offering shared hostels, private two-bedroom suites, and a free public campground. This building also contains a restaurant that's not only for residents but for local people from nearby cities that stop by to eat after hiking.",
       ]}
       images={[
-        { src: p10, leftSrc: p10L, rightSrc: p10R, caption: "Staggered Section Perspective B", full: true },
+        { src: p10, caption: "Staggered Section Perspective B", full: true, wide: true },
         { src: p11, leftSrc: p11L, rightSrc: p11R, caption: "Arch Perspective", full: true },
-        { src: p12, leftSrc: p12L, rightSrc: p12R, caption: "Tunnel Perspective & Site Section", full: true },
+        { src: p12, caption: "Tunnel Perspective & Site Section", full: true, wide: true },
       ]}
       prev={{ to: "/lava", label: "02" }}
       next={{ to: "/drainage", label: "04" }}
