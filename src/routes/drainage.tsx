@@ -12,7 +12,7 @@ export const Route = createFileRoute("/drainage")({
   component: () => (
     <ProjectPage
       number="04"
-      title="Lubbock's Drainage System Analysis"
+      title={"LUBBOCK'S WATERSHED\nANALYSIS"}
       subtitle="Research · Lubbock, Texas"
       description={[
         "Lubbock, Texas, located on the Llano Estacado, is a flat, semi-arid city where water management is shaped by limited rainfall and sudden storm events. Instead of relying only on underground pipes, the city uses a hybrid drainage system that combines streets, storm drains, landscaped medians, and natural depressions known as playa lakes.",

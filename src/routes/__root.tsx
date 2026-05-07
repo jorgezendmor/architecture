@@ -134,7 +134,7 @@ function SiteHeader() {
           <Link to="/chichu" title="Chichu Art Museum" activeProps={{ className: "text-accent-blue" }}>01</Link>
           <Link to="/lava" title="Lubbock's Academy of Visual Arts" activeProps={{ className: "text-accent-blue" }}>02</Link>
           <Link to="/retreat" title="Travelers Retreat" activeProps={{ className: "text-accent-blue" }}>03</Link>
-          <Link to="/drainage" title="Lubbock's Drainage System Analysis" activeProps={{ className: "text-accent-blue" }}>04</Link>
+          <Link to="/drainage" title="Lubbock's Watershed Analysis" activeProps={{ className: "text-accent-blue" }}>04</Link>
           <Link to="/about" activeProps={{ className: "text-accent-blue" }}>More About Me</Link>
         </nav>
       </div>

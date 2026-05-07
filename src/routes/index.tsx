@@ -19,7 +19,7 @@ const projects = [
   { n: "01", title: "Chichu Art Museum", to: "/chichu", img: toc1 },
   { n: "02", title: "Lubbock's Academy of Visual Arts", to: "/lava", img: toc2 },
   { n: "03", title: "Travelers Retreat", to: "/retreat", img: toc3 },
-  { n: "04", title: "Lubbock's Drainage System Analysis", to: "/drainage", img: toc4 },
+  { n: "04", title: "Lubbock's Watershed Analysis", to: "/drainage", img: toc4 },
 ];
 
 function Index() {

@@ -16,7 +16,7 @@ export function ProjectPage({ number, title, subtitle, description, images, prev
       <div className="grid gap-10 border-b border-foreground pb-10 md:grid-cols-[120px_1fr]">
         <div className="text-[11px] uppercase tracking-[0.25em] text-accent-blue">Project {number}</div>
         <div>
-          <h1 className="text-3xl leading-tight md:text-5xl">{title}</h1>
+          <h1 className="whitespace-pre-wrap text-3xl leading-tight md:text-5xl">{title}</h1>
           {subtitle && <p className="mt-2 text-[11px] uppercase tracking-[0.25em] text-foreground/60">{subtitle}</p>}
         </div>
       </div>
