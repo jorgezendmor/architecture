@@ -63,8 +63,6 @@ function AboutPage() {
               Bloom Homes · Architecture Intern
               <br />
               El Paso, Texas
-              <br />
-              May 2025 — August 2025
             </p>
           </Row>
 
