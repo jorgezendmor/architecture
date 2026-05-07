@@ -26,8 +26,8 @@ export const Route = createFileRoute("/retreat")({
         { src: p11, caption: "Arch Perspective", full: true },
         { src: p12, caption: "Tunnel Perspective & Site Section", full: true },
       ]}
-      prev={{ to: "/lava", label: "02 · L.A.V.A" }}
-      next={{ to: "/drainage", label: "04 · Drainage" }}
+      prev={{ to: "/lava", label: "02" }}
+      next={{ to: "/drainage", label: "04" }}
     />
   ),
 });
