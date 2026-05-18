@@ -18,7 +18,7 @@ function AboutPage() {
     <main>
       <div className="grid md:grid-cols-2">
         {/* LEFT — sky */}
-        <section className="bg-sky px-10 py-16 md:px-20 md:py-24">
+        <section className="bg-sky px-10 py-16 md:px-20 md:py-24 md:flex md:flex-col">
           <Row>
             <h2 className="text-accent-blue text-sm">Jorge</h2>
           </Row>
@@ -40,9 +40,9 @@ function AboutPage() {
             </p>
           </Row>
 
-          <div>
+          <div className="md:flex-1 md:flex md:flex-col">
             <h2 className="text-accent-blue text-sm">Skills</h2>
-            <ul className="mt-4 space-y-2 text-[13px]">
+            <ul className="mt-4 space-y-2 text-[13px] md:flex-1 md:flex md:flex-col md:justify-between md:space-y-0">
               {[
                 { name: "Adobe Photoshop", level: 6 },
                 { name: "Adobe Illustrator", level: 9 },
@@ -69,7 +69,7 @@ function AboutPage() {
         </section>
 
         {/* RIGHT — ink */}
-        <section className="bg-ink px-10 py-16 md:px-20 md:py-24">
+        <section className="bg-ink px-10 py-16 md:px-20 md:py-24 md:flex md:flex-col">
           <Row>
             <h2 className="text-accent-blue text-sm">Zendejas Moran</h2>
           </Row>
@@ -91,9 +91,9 @@ function AboutPage() {
             </p>
           </Row>
 
-          <div className="hidden md:block">
+          <div className="hidden md:flex md:flex-1 md:flex-col">
             <h2 className="text-accent-blue text-sm opacity-0">Skills</h2>
-            <div className="mt-4 space-y-2">
+            <div className="mt-4 space-y-2 md:flex-1 md:flex md:flex-col md:justify-between md:space-y-0">
               {[6, 9, 9].map((filled, rowIdx) => (
                 <div key={rowIdx} className="flex h-6 items-center gap-1.5">
                   {Array.from({ length: 10 }).map((_, i) => (
