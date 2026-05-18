@@ -44,9 +44,9 @@ function AboutPage() {
             <h2 className="text-accent-blue text-sm">Skills</h2>
             <ul className="mt-4 space-y-2 text-[13px]">
               {[
-                { name: "Adobe Photoshop", level: 8 },
-                { name: "Adobe Illustrator", level: 7 },
-                { name: "Rhinoceros", level: 6 },
+                { name: "Adobe Photoshop", level: 6 },
+                { name: "Adobe Illustrator", level: 9 },
+                { name: "Rhinoceros", level: 9 },
               ].map((s) => (
                 <li key={s.name} className="flex h-6 items-center justify-between gap-3">
                   <span className="shrink-0">{s.name}</span>
@@ -94,7 +94,7 @@ function AboutPage() {
           <div className="hidden md:block">
             <h2 className="text-accent-blue text-sm opacity-0">Skills</h2>
             <div className="mt-4 space-y-2">
-              {[8, 7, 6].map((filled, rowIdx) => (
+              {[6, 9, 9].map((filled, rowIdx) => (
                 <div key={rowIdx} className="flex h-6 items-center gap-1.5">
                   {Array.from({ length: 10 }).map((_, i) => (
                     <span
