@@ -68,8 +68,8 @@ function AboutPage() {
           </div>
         </section>
 
-        {/* RIGHT — sky */}
-        <section className="bg-sky px-10 py-16 md:px-20 md:py-24 md:flex md:flex-col">
+        {/* RIGHT — white */}
+        <section className="bg-white px-10 py-16 md:px-20 md:py-24 md:flex md:flex-col">
           <Row>
             <h2 className="text-accent-blue text-sm">Zendejas Moran</h2>
           </Row>
