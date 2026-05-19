@@ -37,7 +37,7 @@ function Index() {
         <a
           href="#contents"
           aria-label="Scroll to table of contents"
-          className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-foreground/60 transition-colors hover:text-accent-blue"
+          className="absolute bottom-28 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-foreground/60 transition-colors hover:text-accent-blue"
         >
           <span>Scroll</span>
           <span className="h-8 w-px animate-pulse bg-foreground/60" />
