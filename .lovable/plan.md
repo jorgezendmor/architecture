@@ -1,9 +1,7 @@
-Make the header and footer content stretch closer to the screen edges.
+Replace the Travelers Retreat thumbnail (project 03) on the index page with the uploaded `staggered_section.svg`.
 
-Currently both are capped at `max-w-[1400px]` and centered. On wide screens this leaves big empty margins on the left/right.
+Steps:
+1. Copy `user-uploads://staggered_section.svg` to `src/assets/portfolio/toc-03-new.svg`.
+2. In `src/routes/index.tsx`, update the `toc3` import to point to the new file.
 
-Changes in `src/routes/__root.tsx`:
-1. `SiteHeader` inner container — remove `max-w-[1400px] mx-auto`, keep the existing horizontal padding so content still has a small breathing room from the edge.
-2. `SiteFooter` inner container — same change.
-
-Result: "Jorge Zendejas Moran / Index / 01 / 02 …" in the header and "Portfolio · email · name" in the footer sit close to the left/right edges of the viewport on all screen sizes.
+No other pages or logic change.
