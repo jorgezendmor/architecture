@@ -15,7 +15,7 @@ function Row({ children }: { children: React.ReactNode }) {
 
 function AboutPage() {
   return (
-    <main>
+    <main className="-mb-24">
       <div className="grid md:grid-cols-2">
         {/* LEFT — sky */}
         <section className="bg-sky px-10 py-16 md:px-20 md:py-24 md:flex md:flex-col">
