@@ -28,8 +28,8 @@ function Index() {
   useEffect(() => {
     const onScroll = () => {
       if (window.scrollY > 20) {
+        setScrolled(true);
         window.removeEventListener("scroll", onScroll);
-        requestAnimationFrame(() => setScrolled(true));
       }
     };
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -49,7 +49,7 @@ function Index() {
         <a
           href="#contents"
           aria-label="Scroll to table of contents"
-          className={`absolute bottom-28 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-foreground/60 transition-opacity duration-700 ease-out [will-change:opacity] hover:text-accent-blue ${scrolled ? "pointer-events-none opacity-0" : "opacity-100"}`}
+          className={`absolute bottom-28 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-foreground/60 transition-opacity duration-[2000ms] hover:text-accent-blue ${scrolled ? "pointer-events-none opacity-0" : "opacity-100"}`}
         >
           <span>Scroll</span>
           <span className="h-8 w-px animate-pulse bg-foreground/60" />

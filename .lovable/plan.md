@@ -1,8 +1,9 @@
-Make the scroll-indicator fade smoother and less laggy.
+Make the header and footer content stretch closer to the screen edges.
 
-Cause: 2s `transition-opacity` on a non-composited element triggers paints while the sticky header is also repainting on scroll → reads as jank.
+Currently both are capped at `max-w-[1400px]` and centered. On wide screens this leaves big empty margins on the left/right.
 
-Changes in `src/routes/index.tsx`:
-1. Shorten `duration-[2000ms]` → `duration-700` with `ease-out`.
-2. Add `will-change-[opacity]` so the browser promotes it to its own compositor layer (GPU-accelerated fade, no repaint).
-3. Wrap the scroll handler's state update in `requestAnimationFrame` so the toggle aligns with a frame.
+Changes in `src/routes/__root.tsx`:
+1. `SiteHeader` inner container — remove `max-w-[1400px] mx-auto`, keep the existing horizontal padding so content still has a small breathing room from the edge.
+2. `SiteFooter` inner container — same change.
+
+Result: "Jorge Zendejas Moran / Index / 01 / 02 …" in the header and "Portfolio · email · name" in the footer sit close to the left/right edges of the viewport on all screen sizes.
