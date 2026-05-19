@@ -26,7 +26,12 @@ const projects = [
 function Index() {
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolled(true);
+        window.removeEventListener("scroll", onScroll);
+      }
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
