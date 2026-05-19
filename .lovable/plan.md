@@ -1,23 +1,10 @@
 ## Goal
+Make the sky (light blue) and ink (black) background colors of the About page extend all the way down to the footer's top border line — eliminating the white gap currently between the colored sections and the footer ("Portfolio · email · name").
 
-Make the skill-square indicators visually extend (stretch vertically) down to the bottom edge of the about section, which is the line that divides this content from what's below.
+## Cause
+`SiteFooter` in `src/routes/__root.tsx` uses `mt-24` (96px top margin), which creates a white strip below the About page's colored sections.
 
-## Changes (single file: `src/routes/about.tsx`)
+## Change (single file: `src/routes/about.tsx`)
+- Add `-mb-24` to the `<main>` element on the About page. This negative bottom margin cancels the footer's `mt-24` only on this page, pulling the footer's top border flush against the bottom of the sky/ink sections so the backgrounds extend down to that dividing line.
 
-### Desktop (md and up) — both columns
-- Both the left (sky / blue squares) and right (ink / black-bg with blue squares) Skills blocks should grow so their three rows of squares span vertically from just under the "Skills" heading down to the bottom of the section.
-- Implementation: make each `<section>` a flex column (`md:flex md:flex-col`), let the Skills container be the last child with `md:flex-1 md:flex md:flex-col`, and distribute the 3 square rows evenly with `md:justify-between` (or `md:space-y-*` set to `auto`). Row height stays the same; the gap between rows expands.
-
-### Mobile — only the right (ink) column extends
-- The left column's skills list stays as-is (compact, rows close together) because on mobile the skill name + squares sit on one line inside the normal text flow.
-- Only the right (ink) column's squares block — currently `hidden md:block` — needs no mobile change since it's hidden on mobile. The user's note about "only the black would extend down" on mobile refers to the ink section's overall bottom edge already aligning with the divider, which it does. No mobile-specific layout change is needed for the squares.
-
-### What stays the same
-- Fill counts (Photoshop 6, Illustrator 9, Rhinoceros 9).
-- Colors, square sizes, borders, fonts, copy.
-- Row component min-height and all other sections.
-
-## Technical notes
-- Add `md:flex md:flex-col` to both `<section>` wrappers.
-- Wrap the existing Skills `<div>` (in each section) with `md:flex-1 md:flex md:flex-col md:justify-between` so the 3 rows distribute across remaining vertical space.
-- On the left section, keep the mobile rendering (inline name + squares per `<li>`) unchanged — only apply the flex-grow behavior at `md:` and up.
+No changes to the global footer (other pages keep their gap), no changes to skills layout, copy, colors, or anything else.
