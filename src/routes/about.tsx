@@ -17,8 +17,8 @@ function AboutPage() {
   return (
     <main className="-mb-24">
       <div className="grid md:grid-cols-2">
-        {/* LEFT — sky */}
-        <section className="bg-sky px-10 py-16 md:px-20 md:py-24 md:flex md:flex-col">
+        {/* LEFT — ink */}
+        <section className="bg-ink px-10 py-16 md:px-20 md:py-24 md:flex md:flex-col">
           <Row>
             <h2 className="text-accent-blue text-sm">Jorge</h2>
           </Row>
@@ -68,8 +68,8 @@ function AboutPage() {
           </div>
         </section>
 
-        {/* RIGHT — ink */}
-        <section className="bg-ink px-10 py-16 md:px-20 md:py-24 md:flex md:flex-col">
+        {/* RIGHT — sky */}
+        <section className="bg-sky px-10 py-16 md:px-20 md:py-24 md:flex md:flex-col">
           <Row>
             <h2 className="text-accent-blue text-sm">Zendejas Moran</h2>
           </Row>
