@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 
 import toc1 from "@/assets/portfolio/toc-01-new.svg";
-import toc2 from "@/assets/portfolio/toc-02-lava.svg";
+import toc2 from "@/assets/portfolio/toc-02-lava-v2.svg";
 import toc3 from "@/assets/portfolio/toc-03-new.svg";
 import toc4 from "@/assets/portfolio/toc-04.svg";
 
