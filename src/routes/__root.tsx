@@ -133,7 +133,7 @@ function RootComponent() {
 function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-foreground/80 bg-background/95 backdrop-blur">
-      <div className="mx-auto flex max-w-[1400px] flex-col gap-4 px-5 py-5 text-[11px] uppercase tracking-[0.2em] sm:flex-row sm:items-center sm:justify-between sm:px-8 sm:py-6 sm:text-[13px]">
+      <div className="flex w-full flex-col gap-4 px-5 py-5 text-[11px] uppercase tracking-[0.2em] sm:flex-row sm:items-center sm:justify-between sm:px-8 sm:py-6 sm:text-[13px]">
         <Link to="/" className="flex items-center gap-3 font-medium">
           <img src={logoUrl} alt="Zendmor logo" className="h-12 w-12 object-contain sm:h-14 sm:w-14" />
           <span>Jorge Zendejas Moran</span>
@@ -154,7 +154,7 @@ function SiteHeader() {
 function SiteFooter() {
   return (
     <footer className="mt-24 border-t border-foreground/80">
-      <div className="mx-auto flex max-w-[1400px] flex-col gap-3 px-6 py-8 text-[11px] uppercase tracking-[0.2em] sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex w-full flex-col gap-3 px-6 py-8 text-[11px] uppercase tracking-[0.2em] sm:flex-row sm:items-center sm:justify-between sm:px-8">
         <span>Portfolio</span>
         <span>jorgezendmor@gmail.com · (915) 270-7582</span>
         <span>Jorge Zendejas Moran</span>

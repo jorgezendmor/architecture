@@ -1,6 +1,9 @@
-Create a white version of the logo SVG for the favicon so it's visible on dark browser tabs.
+Make the header and footer content stretch closer to the screen edges.
 
-Steps:
-1. Add `public/favicon.svg` with all `fill="#231f20"` shapes and gradient stops changed to `#ffffff`.
-2. Leave `src/assets/logo.svg` (header logo) untouched — still black.
-3. Favicon link in `src/routes/__root.tsx` already points to `/favicon.svg`, no change needed.
+Currently both are capped at `max-w-[1400px]` and centered. On wide screens this leaves big empty margins on the left/right.
+
+Changes in `src/routes/__root.tsx`:
+1. `SiteHeader` inner container — remove `max-w-[1400px] mx-auto`, keep the existing horizontal padding so content still has a small breathing room from the edge.
+2. `SiteFooter` inner container — same change.
+
+Result: "Jorge Zendejas Moran / Index / 01 / 02 …" in the header and "Portfolio · email · name" in the footer sit close to the left/right edges of the viewport on all screen sizes.
